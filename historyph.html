@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>無標題文件</title>
+
+    <link rel="stylesheet" type="text/css" href="css/button.css">
+
+    <link rel="stylesheet" type="text/css" href="css/hover.css">
+
+    <link rel="stylesheet" type="text/css" href="css/div.css">
+
+    <style type="text/css">
+        body {
+            background-image: url(image/bkg.png);
+            background-repeat: no-repeat;
+            background-size: 90%;
+            background-position: center;
+            background-position-y: 10px;
+        }
+        
+        tbody,
+        th {
+            font-size: 20px;
+            position: relative;
+        }
+        
+        td {
+            font-size: 18px;
+            position: relative;
+            right: 12px;
+            left: 2px;
+            color: #000
+        }
+    </style>
+    <!-- 小日曆 -->
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <!-- 中文化 -->
+    <!-- 小日曆 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+
+<body>
+    <!---外部區塊-->
+    <div style=" height: 848px; width: 90%; margin: 0 auto;border:0px black solid;">
+
+        <!--主要區塊 -->
+        <div id="a" style="height: 68px; width: 67%;margin:25px 0px 0px 27%;border:0px black solid;">
+
+            <!--首頁-->
+            <div id="home-his">
+                <center>
+                    <ul class="Exa1">
+                        <li>
+                            <a class="button-home3" href="#" onClick="location.href ='home.html'">
+                            </a>
+                        </li>
+                        <!--設備管理-->
+                        <li>
+                            <a class="button-set3" href="#" onClick="location.href ='area.html'">
+                            </a>
+                        </li>
+                        <!--歷史資料-->
+                        <li>
+                            <a class="button-his3" href="#" onClick="location.href ='history.html'">
+                            </a>
+                        </li>
+                    </ul>
+                </center>
+            </div>
+
+        </div>
+        <!--主要區塊end -->
+
+        <div style="height:500px;margin:0px 0px 0px 0px;float:left;width:100%;border:0px black solid;">
+
+            <!--環境感測資訊區塊 -->
+            <div id="enmt-his">
+                <font face="Comic Sans MS, cursive">
+                    <div class="panel panel-primary">
+
+                        <div class="panel-body">
+                            <table width="100%" height="88" class="table table-hover1" style="margin-bottom:0;">
+                                <thead>
+                                    <tr>
+                                        <th width="50%"></th>
+                                        <th width="50%"></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+            </div>
+            <!--end.panel-->
+
+            <!--資料區塊-->
+            <div id="a" style="height:78%;font-size:50px;float:right;width:68%;margin:130px 45px 0px 0px;border:0px black solid;">
+
+                <!--下拉式區塊-->
+                <div id="menu">
+
+                    <ul>
+                        <li id="li"><a href="#" onClick="location.href ='history.html'">溫度</a></li>
+
+                        <li id="li2"><a href="#" onClick="location.href ='historyph.html'">PH</a></li>
+
+                        <ul id="ul2">
+                            <a href="#">
+                                <!-- 小日曆+點擊消失 -->
+                                <input type="text" name="tt" id="datepicker1" class="t1" value="YY/MM/DD" onFocus="cleartext(this)" onBlur="resettext(this)" style="margin:15px 0px 0px 0px;" /></a>
+
+                        </ul>
+
+                    </ul>
+                </div>
+                <!--下拉式區塊end-->
+
+                <!--圖表-->
+                <div id="chart-his" class="panel panel-primary">
+                    <ul style=" padding-left:0px; width: 20%; height:2%">
+                        <font size="+1" face="Comic Sans MS, cursive">PH圖表</font>
+                    </ul>
+                    <div class="panel-body">
+                        <div style="height:350px;">
+                            <button type="button" class="btn btn-success" id="map-his" style="cursor: pointer;" onClick="ph_chart()">更新圖表</button>
+                            <div id="container"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end .panel -->
+
+            </div>
+            <!--資料區塊end-->
+
+        </div>
+    </div>
+    <!---外部區塊end-->
+
+    <!-- 日曆點擊消失 -->
+    <script type="text/javascript">
+        function resettext(id) {
+            //恢復文字
+            if (id.value == "") {
+                id.value = id.defaultValue;
+                id.className = "t1";
+            }
+        }
+
+        function cleartext(id) {
+            //清除文字
+            id.value = "";
+            d.className = "";
+        }
+    </script>
+    <!-- 日曆點擊消失 -->
+    <!-- 小日曆 -->
+    <script language="JavaScript">
+        $(document).ready(function() {
+            $("#datepicker1").datepicker({
+                showOn: "button",
+                buttonText: "日曆",
+                buttonImage: "calendar.png",
+                dateFormat: "yymmdd"
+            }).on("change", function() {
+                ph_chart()
+            });
+        });
+    </script>
+    <!-- 小日曆 -->
+
+    <script>
+        $(function() {
+            $.post('api.php', {
+                action: 'getSensor'
+            }, function(data) {
+                for (var i in data) {
+
+                    $('table:eq(0) tbody').append(
+                        $('<tr/>').append(
+                            $('<th/>').text(data[i].ch_name)),
+                        $('<tr/>').append(
+                            $('<th/>').text(data[i].value).addClass('value'),
+                            $('<td/>').text(data[i].datetime).addClass('time')
+                        ),
+                        $('<br/>').append(),
+                        $('<br/>').append()
+                        .addClass(data[i].name)
+                    )
+
+                }
+            }, 'json');
+            setInterval(function() {
+                $.post('api.php', {
+                    action: 'getSensor'
+                }, function(data) {
+                    for (var i in data) {
+                        $('table:eq(0) tbody tr.' + data[i].name + ' td.value').text(data[i].value);
+                        $('table:eq(0) tbody tr.' + data[i].name + ' td.time').text(data[i].datetime);
+                    }
+                }, 'json');
+            }, 60000);
+            ph_chart();
+        });
+        //將取得的值逐一加入圖表中
+        function appendPoint(chart, date, ph, shift) {
+            chart.series[0].addPoint([date, ph], false, shift);
+        }
+        //產生環境溫度圖表
+        function ph_chart() {
+            var options = {
+                chart: {
+                    renderTo: 'container', //顯示在哪一區域
+                    type: 'spline',
+                    height: 260
+                },
+                title: {
+                    text: ''
+                },
+                xAxis: {
+                    title: {
+                        text: "時間"
+                    },
+                    type: 'datetime',
+                    labels: {
+                        formatter: function() {
+                            return Highcharts.dateFormat('%H:%M', this.value);
+                        }
+                    }
+                },
+                yAxis: [{
+                    min: 0,
+                    title: {
+                        text: 'PH'
+                    }
+                }],
+                plotOptions: {
+                    spline: {
+                        lineWidth: 4,
+                        states: {
+                            hover: {
+                                lineWidth: 5
+                            }
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                    }
+                },
+                series: [{
+                    name: '環境PH'
+                }]
+            };
+            phchart = new Highcharts.Chart(options);
+
+            $.post('api.php', {
+                action: 'getPH',
+                date: $("#datepicker1").val()
+            }, function(data) {
+                for (var i in data) {
+                    datetime = data[i].datetime.split(' ');
+                    date = datetime[0].split('-');
+                    time = datetime[1].split(':');
+                    date = Date.UTC(date[0], date[1] - 1, date[2], time[0], time[1], time[2]);
+                    //加入一筆資料到圖表中
+                    appendPoint(phchart, date, parseFloat(data[i].ph, 10));
+                }
+                phchart.redraw();
+            }, 'json');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>無標題文件</title>
+
+    <link rel="stylesheet" type="text/css" href="css/button.css">
+    <link rel="stylesheet" type="text/css" href="css/div.css">
+
+    <style type="text/css">
+        body {
+            background-image: url(image/bkg.png);
+            background-repeat: no-repeat;
+            background-size: 90%;
+            background-position: center;
+            background-position-y: 10px;
+        }
+        
+        tbody,
+        th {
+            font-size: 20px;
+            position: relative;
+        }
+        
+        td {
+            font-size: 18px;
+            position: relative;
+            right: 12px;
+            left: 30px;
+            color: #000
+        }
+    </style>
+
+</head>
+
+<body>
+    <!---外部區塊-->
+    <div style=" height: 808px; width: 90%; margin: 0 auto;border:0px black solid;">
+
+        <!--主要區塊 -->
+        <div id="a" style="height: 68px; width: 67%;margin:52px 0px 0px 30%;border:0px black solid;">
+
+            <!--首頁-->
+            <div id="home-home">
+                <center>
+                    <ul class="Exa1">
+                        <li>
+                            <a class="button-home" href="#" onclick="location.href='home.html'">
+                            </a>
+                        </li>
+
+                        <!--設備管理-->
+
+                        <li>
+                            <a class="button-set" href="#" onClick="location.href ='area.html'">
+                            </a>
+                        </li>
+
+                        <!--歷史資料-->
+                        <li>
+                            <a class="button-his" href="#" onClick="location.href ='history.html'">
+                            </a>
+                        </li>
+                    </ul>
+                </center>
+            </div>
+
+        </div>
+        <!--主要區塊end -->
+
+        <div style="height:700px;margin:0px 0px 0px 0px;float:left;width:100%;border:0px black solid;">
+
+            <!--環境感測資訊區塊 -->
+            <div id="enmt-home" style="border:0px black solid;">
+                <font face="Comic Sans MS, cursive">
+                    <div class="panel panel-primary">
+
+                        <div class="panel-body">
+                            <table width="100%" height="88" class="table table-hover1" style="margin-bottom:0;">
+                                <thead>
+                                    <tr>
+                                        <th width="50%"></th>
+                                        <th width="50%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+            </div>
+
+            <div style="height:300px;margin:100px 0px 0px 100px;float:left;width:62%;border:0px black solid;">
+
+                <!--網頁介紹-->
+                <div style="height:300px;margin:0px 0px 0px 0px;float:left;width:50%;border:0px black solid;">
+
+                    <font size="5" face="Comic Sans MS, cursive" color="#666666">網頁監控</font>
+
+                    <table width="300px">
+                        <tr>
+                            <td width="75px">
+                                <font size="4" face="Comic Sans MS, cursive" style="font-weight:bold" color="#282828">環境管理</font>
+                            </td>
+                            <td width="55px"><img src="image/aa.png"> </td>
+                            <td style="text-align:justify">
+                                <font size="4" face="Comic Sans MS, cursive" color="#2b2424">用於設定環境的上下限，以及遠端控制電器的開關</font>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="300px">
+                        <tr>
+                            <td width="75px">
+                                <font size="4" face="Comic Sans MS, cursive" style="font-weight:bold" color="#282828">歷史資料</font>
+                            </td>
+                            <td width="55px"><img src="image/hh.png"> </td>
+                            <td style="text-align:justify">
+                                <font size="4" face="Comic Sans MS, cursive" color="#2b2424">分析數據資料，藉由圖表分析每個日期的狀況</font>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--電器介紹-->
+                <div style="height:300px;float:right;width:50%;border:0px black solid;">
+                    <font size="5" face="Comic Sans MS, cursive" color="#666666">電器設備</font>
+
+                    <table width="300px">
+                        <tr>
+                            <td width="60px">
+                                <font size="4" face="Comic Sans MS, cursive" style="font-weight:bold" color="#282828">餵食器</font>
+                            </td>
+                            <td width="55px"><img src="image/feed.png"> </td>
+                            <td style="text-align:justify">
+                                <font size="4" face="Comic Sans MS, cursive" color="#2b2424">能藉由網頁遠端控來控制開關，以每8小時會重新餵食一次</font>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="300px">
+                        <tr>
+                            <td width="60px">
+                                <font size="4" face="Comic Sans MS, cursive" style="font-weight:bold" color="#282828">致冷片</font>
+                            </td>
+                            <td width="55px"><img src="image/fan.png"> </td>
+                            <td style="text-align:justify">
+                                <font size="4" face="Comic Sans MS, cursive" color="#2b2424">用於降低水溫，大於所設定的溫度時會自動啟動</font>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="300px">
+                        <tr>
+                            <td width="60px">
+                                <font size="4" face="Comic Sans MS, cursive" style="font-weight:bold" color="#282828">加熱棒</font>
+                            </td>
+                            <td width="55px"><img src="image/hot.png"> </td>
+                            <td style="text-align:justify">
+                                <font size="4" face="Comic Sans MS, cursive" color="#2b2424">用於增加水溫，小於所設定的溫度時會自動啟動</font>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div style="height:260px;margin:30px 0px 0px 100px;float:left;width:62%;border:0px black solid;">
+
+                <!--感測器介紹-->
+                <div style="height:250px;float:left;width:100%;border:0px black solid;">
+
+                    <font size="5" face="Comic Sans MS, cursive" color="#666666">感測器</font>
+
+                    <table width="600px">
+                        <tr>
+                            <td width="70px">
+                                <font size="4" face="Comic Sans MS, cursive" style="font-weight:bold" color="#282828">溫度</font>
+                            </td>
+                            <td width="55px"><img src="image/tp.png"> </td>
+                            <td style="text-align:justify">
+                                <font size="4" face="Comic Sans MS, cursive" color="#2b2424">測量水中的溫度，透過設備管理設定它的範圍，超過或低於時會啟動控溫設備</font>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="600px">
+                        <tr>
+                            <td width="70px">
+                                <font size="4" face="Comic Sans MS, cursive" style="font-weight:bold" color="#282828">PH</font>
+                            </td>
+                            <td width="55px"><img src="image/ph.png"> </td>
+                            <td style="text-align:justify">
+                                <font size="4" face="Comic Sans MS, cursive" color="#2b2424">測量水中的PH，透過設備管理設定範圍，超過或低於所設定之範圍時會傳送信箱通知</font>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <!--end.panel-->
+    </div>
+    <!---外部區塊end-->
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js">
+    </script>
+    <script>
+        $(function() {
+            $.post('api.php', {
+                action: 'getSensor'
+            }, function(data) {
+                for (var i in data) {
+
+                    $('table:eq(0) tbody').append(
+                        $('<tr/>').append(
+                            $('<th/>').text(data[i].ch_name)),
+                        $('<tr/>').append(
+                            $('<th/>').text(data[i].value).addClass('value'),
+                            $('<td/>').text(data[i].datetime).addClass('time')
+                        ),
+                        $('<br/>').append(),
+                        $('<br/>').append()
+                        .addClass(data[i].name)
+                    )
+
+                }
+            }, 'json');
+            setInterval(function() {
+                $.post('api.php', {
+                    action: 'getSensor'
+                }, function(data) {
+                    for (var i in data) {
+                        $('table:eq(0) tbody tr.' + data[i].name + ' td.value').text(data[i].value);
+                        $('table:eq(0) tbody tr.' + data[i].name + ' td.time').text(data[i].datetime);
+                    }
+                }, 'json');
+            }, 60000);
+
+        });
+    </script>
+</body>
+
+</html>

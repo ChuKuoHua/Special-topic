@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+a.button-home {
+    background: url(../image/home2.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    margin: 0px 0px 0px -50px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-home:hover {
+    background-position: 0px -48px;
+}
+
+a.button-set {
+    background: url(../image/system.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin: 0px 0px 5px 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-set:hover {
+    background-position: 0px -49px;
+}
+
+a.button-his {
+    background: url(../image/his.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin: 0px 0px 5px 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-his:hover {
+    background-position: 0px -51px;
+}
+
+a.button-home2 {
+    background: url(../image/home.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    margin: 0px 0px 0px 0px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-home2:hover {
+    background-position: 0px -48px;
+}
+
+a.button-set2 {
+    background: url(../image/system2.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin: 0px 0px 5px 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-set2:hover {
+    background-position: 0px -49px;
+}
+
+a.button-his2 {
+    background: url(../image/his.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin: 0px 0px 5px 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-his2:hover {
+    background-position: 0px -51px;
+}
+
+a.button-home3 {
+    background: url(../image/home.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    margin: 0x 0px 0px 0px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-home3:hover {
+    background-position: 0px -48px;
+}
+
+a.button-set3 {
+    background: url(../image/system.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin: 0px 0px 5px 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-set3:hover {
+    background-position: 0px -49px;
+}
+
+a.button-his3 {
+    background: url(../image/his2.png) no-repeat;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin: 0px 0px 5px 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+a.button-his3:hover {
+    background-position: 0px -51px;
+}
